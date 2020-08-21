@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="./css/style.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="app">
+        <h3>导出模板信息</h3>
+        <main class="main">
+            <div class="in">
+                <div class="row">
+                    预设导出路径：
+                </div>
+                <div class="row">
+                    <input type="text" value="" placeholder="请选择一个导出路径" id="exportPath">
+                    <a class="choose-path-a" href="javascript:void(0);" onclick="selectExportPath()">选择路径</a>
+                </div>
+                <div class="row">
+                    <button class="export-btn" onclick="doExport()">执行导出</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script type="text/javascript" src="./js/CSInterface.js"></script>
+    <script type="text/javascript" src="./js/main.js"></script>
+</body>
+
+</html>

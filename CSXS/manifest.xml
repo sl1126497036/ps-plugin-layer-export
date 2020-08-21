@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionManifest  Version="6.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ExtensionBundleId="plugin.layerExport" ExtensionBundleName="plugin.layerExport" ExtensionBundleVersion="1.0">
+    <Author>SL</Author>
+    <Contact mailto="1126497036@qq.com" />
+    <Abstract href="" />
+    <ExtensionList>
+        <Extension Id="plugin.layerExport" Version="1.0" /> <!-- 插件ID 和 版本-->
+    </ExtensionList>
+
+    <ExecutionEnvironment>
+        <HostList>
+           <!-- Photoshop CC2015.5 = 17.0 -->
+            <Host Name="PHXS" Version="[17.0,99.9]"/>
+            <Host Name="PHSP" Version="[17.0,99.9]"/>
+        </HostList>
+
+        <LocaleList>
+            <Locale Code="All" />
+        </LocaleList>
+
+        <RequiredRuntimeList>
+            <RequiredRuntime Name="CSXS" Version="6.0" />
+        </RequiredRuntimeList>
+
+    </ExecutionEnvironment>
+    <DispatchInfoList>
+        <Extension Id="plugin.layerExport">
+            <DispatchInfo>
+                <Resources>
+                    <MainPath>./index.html</MainPath> <!-- 程序入口-->
+                    <ScriptPath>./jsx/main.jsx</ScriptPath> <!-- 插件自动加载的jsx文件 -->
+                    <CEFCommandLine>
+                        <Parameter>--enable-nodejs</Parameter>
+                    </CEFCommandLine>
+                </Resources>
+
+                <Lifecycle>
+                    <AutoVisible>true</AutoVisible>
+                    <StartOn>
+                         <Event>applicationActivate</Event>
+                         <Event>com.adobe.csxs.events.ApplicationActivate</Event>
+                    </StartOn>
+                </Lifecycle>
+
+                <UI>
+                    <Type>Panel</Type> <!-- 插件模式：面板-->
+                    <Menu>PSD图层批量导出插件</Menu> <!-- 插件在面板上的标题-->
+                    <Geometry> <!-- 插件尺寸-->
+                        <Size>
+                            <Height>320</Height>
+                            <Width>260</Width>
+                        </Size>
+                        <MaxSize>
+                            <Height>320</Height>
+                            <Width>260</Width>
+                        </MaxSize>
+                        <MinSize>
+                            <Height>300</Height>
+                            <Width>260</Width>
+                        </MinSize>
+                    </Geometry>
+                    <Icons><!-- 插件图标-->
+                        <Icon Type="Normal">./img/icon.png</Icon>
+                        <Icon Type="RollOver">./img/icon.png</Icon>
+                        <Icon Type="DarkNormal">./img/icon.png</Icon>
+                        <Icon Type="DarkRollOver">./img/icon.png</Icon>
+                    </Icons>
+                </UI>
+            </DispatchInfo>
+        </Extension>
+    </DispatchInfoList>
+</ExtensionManifest>
