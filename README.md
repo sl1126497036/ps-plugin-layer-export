@@ -44,7 +44,7 @@ function doExport(exportPath){
                     }
                 }
                 var pngSaveOptions = new PNGSaveOptions();
-				//PNG导出质量，根据需要设置
+		//PNG导出质量，根据需要设置
                 pngSaveOptions.compression = 2;
                 pngSaveOptions.interlaced = false;
                 var layerName = activeLayer.name.replace(/\./g,"_").replace(/\s+/g,"_");
@@ -71,15 +71,15 @@ JS:
 ```javascript
 //js和jsx的交互接口
 const cs = new CSInterface();
-var fs = require("fs");
-var os = require("os");
+const fs = require("fs");
+const os = require("os");
 
 //导入第三方库方法
 loadJSX = (fileName) => {
-        var extensionRoot = cs.getSystemPath(SystemPath.EXTENSION) + "/lib/";
+        const extensionRoot = cs.getSystemPath(SystemPath.EXTENSION) + "/lib/";
         cs.evalScript('$.evalFile("' + extensionRoot + fileName + '")');
     }
-//导入JSON2.jsx
+    //导入JSON2.jsx
 loadJSX("json2.jsx");
 ```
 
