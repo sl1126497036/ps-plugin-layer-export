@@ -155,4 +155,4 @@ exportJson = (exportPath) => {
 
 如果需要更多PS插件开发教程，可参考: https://github.com/lujingtao/Photoshop-plug-in-development-tutorial
 
-如果想利用Java实现自动化批处理，可参考： https://github.com/sl1126497036/psplugin-automate
+如果想实现自动化批处理，可参考： https://github.com/sl1126497036/psplugin-automate
