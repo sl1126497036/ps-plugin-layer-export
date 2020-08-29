@@ -50,7 +50,8 @@ function doExport(exportPath){
                 var layerName = activeLayer.name.replace(/\./g,"_").replace(/\s+/g,"_");
                 //裁剪
                 app.activeDocument.crop([UnitValue (activeLayer.bounds[0]), UnitValue (activeLayer.bounds[1]), UnitValue (activeLayer.bounds[2]), UnitValue (activeLayer.bounds[3])]);
-                //另存为 app.activeDocument.saveAs(File(exportPath+"/"+activeLayerIndex),pngSaveOptions,true,Extension.LOWERCASE);
+                //另存为 
+		app.activeDocument.saveAs(File(exportPath+"/"+activeLayerIndex),pngSaveOptions,true,Extension.LOWERCASE);
             }catch(e){
                 alert("图层"+activeLayer.name+"导出失败"+e);
                 return;
@@ -115,7 +116,7 @@ exportJson = (exportPath) => {
             const artLayers = JSON.parse(artLayersStr);
             artLayers && artLayers.length > 0 && cs.evalScript("exportBasePath('" + exportPath + "')", (exportBasePath) => {
                 if (resCheck(exportBasePath)) {
-                    var jsonFilePath = exportBasePath + "/result.json";
+                    let jsonFilePath = exportBasePath + "/result.json";
                     if (artLayers) {
                         const jsonData = [];
                         artLayers.map((item, index) => {
